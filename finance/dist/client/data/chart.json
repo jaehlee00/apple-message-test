@@ -1,0 +1,625 @@
+{
+  "ok": true,
+  "widget_type": "chart",
+  "title": "Microsoft FY2025 quarterly revenue (USD billions)",
+  "subtitle": "FY2025 Q1–Q4 · Restated provider series; Q4 flagged calculated",
+  "source": {
+    "label": "Fiscal - measure_financial_facts",
+    "query": {
+      "engine": "Fiscal",
+      "providers": [
+        "Fiscal"
+      ],
+      "source_refs": [
+        {
+          "id": "source-fiscal-c52279449714",
+          "provider": "Fiscal",
+          "action": "submit_query",
+          "dataset": "measure_financial_facts",
+          "request_id": "eb3cb8cd-00dd-4bb8-967a-09b074ccbead",
+          "source_locator": {
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "document": "https://api.fiscal.ai/v1/filing/0001193125-25-256321/pdf",
+            "image": "https://api.fiscal.ai/v1/filing/0001193125-25-256321/page/3/image",
+            "page_number": 3
+          }
+        },
+        {
+          "id": "source-fiscal-0d23995508ba",
+          "provider": "Fiscal",
+          "action": "submit_query",
+          "dataset": "measure_financial_facts",
+          "request_id": "eb3cb8cd-00dd-4bb8-967a-09b074ccbead",
+          "source_locator": {
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/msft-20251231.htm",
+            "document": "https://api.fiscal.ai/v1/filing/0001193125-26-027207/pdf",
+            "image": "https://api.fiscal.ai/v1/filing/0001193125-26-027207/page/3/image",
+            "page_number": 3
+          }
+        },
+        {
+          "id": "source-fiscal-fcc901bc321a",
+          "provider": "Fiscal",
+          "action": "submit_query",
+          "dataset": "measure_financial_facts",
+          "request_id": "eb3cb8cd-00dd-4bb8-967a-09b074ccbead",
+          "source_locator": {
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm",
+            "document": "https://api.fiscal.ai/v1/filing/0001193125-26-191507/pdf",
+            "image": "https://api.fiscal.ai/v1/filing/0001193125-26-191507/page/3/image",
+            "page_number": 3
+          }
+        },
+        {
+          "id": "source-fiscal-a6c37e08f014",
+          "provider": "Fiscal",
+          "action": "submit_query",
+          "dataset": "measure_financial_facts",
+          "request_id": "eb3cb8cd-00dd-4bb8-967a-09b074ccbead",
+          "source_locator": {
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+            "document": "https://api.fiscal.ai/v1/filing/0001193125-26-323660/pdf",
+            "image": "https://api.fiscal.ai/v1/filing/0001193125-26-323660/page/50/image",
+            "page_number": 50
+          }
+        }
+      ]
+    }
+  },
+  "table": {
+    "columns": [
+      {
+        "key": "company_id",
+        "label": "Company Id",
+        "type": "text"
+      },
+      {
+        "key": "dataset",
+        "label": "Dataset",
+        "type": "text"
+      },
+      {
+        "key": "metric_id",
+        "label": "Metric Id",
+        "type": "text"
+      },
+      {
+        "key": "metric_name",
+        "label": "Metric Name",
+        "type": "text"
+      },
+      {
+        "key": "value",
+        "label": "Value",
+        "type": "number",
+        "aggregation_behavior": "non_additive",
+        "default_aggregation": "none"
+      },
+      {
+        "key": "original_value",
+        "label": "Original Value",
+        "type": "text"
+      },
+      {
+        "key": "currency",
+        "label": "Currency",
+        "type": "text"
+      },
+      {
+        "key": "original_currency",
+        "label": "Original Currency",
+        "type": "text"
+      },
+      {
+        "key": "unit",
+        "label": "Unit",
+        "type": "text"
+      },
+      {
+        "key": "statement_type",
+        "label": "Statement Type",
+        "type": "text"
+      },
+      {
+        "key": "representation",
+        "label": "Representation",
+        "type": "text"
+      },
+      {
+        "key": "period_type",
+        "label": "Period Type",
+        "type": "text"
+      },
+      {
+        "key": "period_id",
+        "label": "Period Id",
+        "type": "text"
+      },
+      {
+        "key": "date",
+        "label": "Date",
+        "type": "text"
+      },
+      {
+        "key": "report_date",
+        "label": "Report Date",
+        "type": "text"
+      },
+      {
+        "key": "fiscal_year",
+        "label": "Fiscal Year",
+        "type": "number",
+        "aggregation_behavior": "non_additive",
+        "default_aggregation": "none"
+      },
+      {
+        "key": "fiscal_quarter",
+        "label": "Fiscal Quarter",
+        "type": "number",
+        "aggregation_behavior": "non_additive",
+        "default_aggregation": "none"
+      },
+      {
+        "key": "period_duration",
+        "label": "Period Duration",
+        "type": "text"
+      },
+      {
+        "key": "is_stub_period",
+        "label": "Is Stub Period",
+        "type": "text"
+      },
+      {
+        "key": "earnings_date",
+        "label": "Earnings Date",
+        "type": "text"
+      },
+      {
+        "key": "last_source_filing_date",
+        "label": "Last Source Filing Date",
+        "type": "text"
+      },
+      {
+        "key": "is_calculated",
+        "label": "Is Calculated",
+        "type": "text"
+      },
+      {
+        "key": "is_restated",
+        "label": "Is Restated",
+        "type": "text"
+      },
+      {
+        "key": "is_adjusted",
+        "label": "Is Adjusted",
+        "type": "text"
+      },
+      {
+        "key": "calc_type",
+        "label": "Calc Type",
+        "type": "text"
+      },
+      {
+        "key": "mapping_type",
+        "label": "Mapping Type",
+        "type": "text"
+      },
+      {
+        "key": "observed_at",
+        "label": "Observed At",
+        "type": "text"
+      },
+      {
+        "key": "provider",
+        "label": "Provider",
+        "type": "text"
+      },
+      {
+        "key": "observation_type",
+        "label": "Observation type",
+        "type": "text"
+      },
+      {
+        "key": "source_ref_ids",
+        "label": "Source references",
+        "type": "text"
+      }
+    ],
+    "rows": [
+      {
+        "company_id": "edcc9d50-dc5e-5ad3-bfa7-31961e623216",
+        "dataset": "standardized_income_statements",
+        "metric_id": "income_statement_total_revenues",
+        "metric_name": "Total Revenues",
+        "value": 65585000000,
+        "original_value": null,
+        "currency": "USD",
+        "original_currency": "USD",
+        "unit": "M",
+        "statement_type": "income_statement",
+        "representation": "standardized",
+        "period_type": "quarterly",
+        "period_id": "2_Quarterly_2024-09-30",
+        "date": "2024-09-30",
+        "report_date": "2024-09-30",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "period_duration": "3 Months",
+        "is_stub_period": null,
+        "earnings_date": "2024-10-30",
+        "last_source_filing_date": "2025-10-29",
+        "is_calculated": false,
+        "is_restated": true,
+        "is_adjusted": null,
+        "calc_type": "reported",
+        "mapping_type": "direct",
+        "observed_at": "2026-09-08T14:35:29.890495Z",
+        "provider": "Fiscal",
+        "source_ref_ids": [
+          "source-fiscal-c52279449714"
+        ],
+        "observation_type": "actual"
+      },
+      {
+        "company_id": "edcc9d50-dc5e-5ad3-bfa7-31961e623216",
+        "dataset": "standardized_income_statements",
+        "metric_id": "income_statement_total_revenues",
+        "metric_name": "Total Revenues",
+        "value": 69632000000,
+        "original_value": null,
+        "currency": "USD",
+        "original_currency": "USD",
+        "unit": "M",
+        "statement_type": "income_statement",
+        "representation": "standardized",
+        "period_type": "quarterly",
+        "period_id": "2_Quarterly_2024-12-31",
+        "date": "2024-12-31",
+        "report_date": "2024-12-31",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 2,
+        "period_duration": "3 Months",
+        "is_stub_period": null,
+        "earnings_date": "2025-01-29",
+        "last_source_filing_date": "2026-01-28",
+        "is_calculated": false,
+        "is_restated": true,
+        "is_adjusted": null,
+        "calc_type": "reported",
+        "mapping_type": "direct",
+        "observed_at": "2026-09-08T14:35:29.890495Z",
+        "provider": "Fiscal",
+        "source_ref_ids": [
+          "source-fiscal-0d23995508ba"
+        ],
+        "observation_type": "actual"
+      },
+      {
+        "company_id": "edcc9d50-dc5e-5ad3-bfa7-31961e623216",
+        "dataset": "standardized_income_statements",
+        "metric_id": "income_statement_total_revenues",
+        "metric_name": "Total Revenues",
+        "value": 70066000000,
+        "original_value": null,
+        "currency": "USD",
+        "original_currency": "USD",
+        "unit": "M",
+        "statement_type": "income_statement",
+        "representation": "standardized",
+        "period_type": "quarterly",
+        "period_id": "2_Quarterly_2025-03-31",
+        "date": "2025-03-31",
+        "report_date": "2025-03-31",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 3,
+        "period_duration": "3 Months",
+        "is_stub_period": null,
+        "earnings_date": "2025-04-30",
+        "last_source_filing_date": "2026-04-29",
+        "is_calculated": false,
+        "is_restated": true,
+        "is_adjusted": null,
+        "calc_type": "reported",
+        "mapping_type": "direct",
+        "observed_at": "2026-09-27T17:34:39.724319Z",
+        "provider": "Fiscal",
+        "source_ref_ids": [
+          "source-fiscal-fcc901bc321a"
+        ],
+        "observation_type": "actual"
+      },
+      {
+        "company_id": "edcc9d50-dc5e-5ad3-bfa7-31961e623216",
+        "dataset": "standardized_income_statements",
+        "metric_id": "income_statement_total_revenues",
+        "metric_name": "Total Revenues",
+        "value": 76441000000,
+        "original_value": null,
+        "currency": "USD",
+        "original_currency": "USD",
+        "unit": "M",
+        "statement_type": "income_statement",
+        "representation": "standardized",
+        "period_type": "quarterly",
+        "period_id": "2_Quarterly_2025-06-30",
+        "date": "2025-06-30",
+        "report_date": "2025-06-30",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 4,
+        "period_duration": "3 Months",
+        "is_stub_period": null,
+        "earnings_date": "2025-07-30",
+        "last_source_filing_date": "2026-07-29",
+        "is_calculated": true,
+        "is_restated": true,
+        "is_adjusted": null,
+        "calc_type": "derived_lineitem",
+        "mapping_type": "direct",
+        "observed_at": "2026-10-06T04:20:12.593041Z",
+        "provider": "Fiscal",
+        "source_ref_ids": [
+          "source-fiscal-a6c37e08f014",
+          "source-fiscal-fcc901bc321a"
+        ],
+        "observation_type": "actual"
+      }
+    ],
+    "row_count": 4,
+    "truncated": false
+  },
+  "chart": {
+    "type": "bar",
+    "fields": {
+      "x": {
+        "field": "date",
+        "type": "ordinal",
+        "label": "Quarter end"
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative",
+        "label": "Revenue (USD billions)",
+        "unit": "USD",
+        "format": "currency",
+        "aggregate": "none"
+      }
+    },
+    "options": {
+      "orientation": "vertical",
+      "grouping": "single"
+    }
+  },
+  "display": {
+    "unit": "USD",
+    "currency_scale": "billions",
+    "decimal_places": 2
+  },
+  "quality_warnings": [],
+  "chart_spec": {
+    "id": "default",
+    "title": "Microsoft FY2025 quarterly revenue (USD billions)",
+    "subtitle": "FY2025 Q1–Q4 · Restated provider series; Q4 flagged calculated",
+    "type": "bar",
+    "dataset": "default",
+    "encodings": {
+      "x": {
+        "field": "date",
+        "type": "ordinal",
+        "label": "Quarter end"
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative",
+        "label": "Revenue (USD billions)",
+        "unit": "USD",
+        "format": "currency",
+        "aggregate": "none"
+      }
+    },
+    "xAxisTitle": "Date",
+    "yAxisTitle": "Value",
+    "unit": "USD",
+    "currencyScale": "billions",
+    "decimalPlaces": 2,
+    "valueFormat": "number",
+    "settings": {
+      "orientation": "vertical",
+      "group_mode": "single"
+    },
+    "surface": {
+      "surface": "compact",
+      "showControls": false
+    }
+  },
+  "visualization_type": "bar",
+  "show_controls": null,
+  "data": [
+    {
+      "company_id": "edcc9d50-dc5e-5ad3-bfa7-31961e623216",
+      "dataset": "standardized_income_statements",
+      "metric_id": "income_statement_total_revenues",
+      "metric_name": "Total Revenues",
+      "value": 65585000000,
+      "original_value": null,
+      "currency": "USD",
+      "original_currency": "USD",
+      "unit": "M",
+      "statement_type": "income_statement",
+      "representation": "standardized",
+      "period_type": "quarterly",
+      "period_id": "2_Quarterly_2024-09-30",
+      "date": "2024-09-30",
+      "report_date": "2024-09-30",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 1,
+      "period_duration": "3 Months",
+      "is_stub_period": null,
+      "earnings_date": "2024-10-30",
+      "last_source_filing_date": "2025-10-29",
+      "is_calculated": false,
+      "is_restated": true,
+      "is_adjusted": null,
+      "calc_type": "reported",
+      "mapping_type": "direct",
+      "observed_at": "2026-09-08T14:35:29.890495Z",
+      "provider": "Fiscal",
+      "source_ref_ids": [
+        "source-fiscal-c52279449714"
+      ],
+      "observation_type": "actual",
+      "x": "2024-09-30",
+      "y": 65585000000,
+      "size": null,
+      "series": "Value"
+    },
+    {
+      "company_id": "edcc9d50-dc5e-5ad3-bfa7-31961e623216",
+      "dataset": "standardized_income_statements",
+      "metric_id": "income_statement_total_revenues",
+      "metric_name": "Total Revenues",
+      "value": 69632000000,
+      "original_value": null,
+      "currency": "USD",
+      "original_currency": "USD",
+      "unit": "M",
+      "statement_type": "income_statement",
+      "representation": "standardized",
+      "period_type": "quarterly",
+      "period_id": "2_Quarterly_2024-12-31",
+      "date": "2024-12-31",
+      "report_date": "2024-12-31",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 2,
+      "period_duration": "3 Months",
+      "is_stub_period": null,
+      "earnings_date": "2025-01-29",
+      "last_source_filing_date": "2026-01-28",
+      "is_calculated": false,
+      "is_restated": true,
+      "is_adjusted": null,
+      "calc_type": "reported",
+      "mapping_type": "direct",
+      "observed_at": "2026-09-08T14:35:29.890495Z",
+      "provider": "Fiscal",
+      "source_ref_ids": [
+        "source-fiscal-0d23995508ba"
+      ],
+      "observation_type": "actual",
+      "x": "2024-12-31",
+      "y": 69632000000,
+      "size": null,
+      "series": "Value"
+    },
+    {
+      "company_id": "edcc9d50-dc5e-5ad3-bfa7-31961e623216",
+      "dataset": "standardized_income_statements",
+      "metric_id": "income_statement_total_revenues",
+      "metric_name": "Total Revenues",
+      "value": 70066000000,
+      "original_value": null,
+      "currency": "USD",
+      "original_currency": "USD",
+      "unit": "M",
+      "statement_type": "income_statement",
+      "representation": "standardized",
+      "period_type": "quarterly",
+      "period_id": "2_Quarterly_2025-03-31",
+      "date": "2025-03-31",
+      "report_date": "2025-03-31",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 3,
+      "period_duration": "3 Months",
+      "is_stub_period": null,
+      "earnings_date": "2025-04-30",
+      "last_source_filing_date": "2026-04-29",
+      "is_calculated": false,
+      "is_restated": true,
+      "is_adjusted": null,
+      "calc_type": "reported",
+      "mapping_type": "direct",
+      "observed_at": "2026-09-27T17:34:39.724319Z",
+      "provider": "Fiscal",
+      "source_ref_ids": [
+        "source-fiscal-fcc901bc321a"
+      ],
+      "observation_type": "actual",
+      "x": "2025-03-31",
+      "y": 70066000000,
+      "size": null,
+      "series": "Value"
+    },
+    {
+      "company_id": "edcc9d50-dc5e-5ad3-bfa7-31961e623216",
+      "dataset": "standardized_income_statements",
+      "metric_id": "income_statement_total_revenues",
+      "metric_name": "Total Revenues",
+      "value": 76441000000,
+      "original_value": null,
+      "currency": "USD",
+      "original_currency": "USD",
+      "unit": "M",
+      "statement_type": "income_statement",
+      "representation": "standardized",
+      "period_type": "quarterly",
+      "period_id": "2_Quarterly_2025-06-30",
+      "date": "2025-06-30",
+      "report_date": "2025-06-30",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 4,
+      "period_duration": "3 Months",
+      "is_stub_period": null,
+      "earnings_date": "2025-07-30",
+      "last_source_filing_date": "2026-07-29",
+      "is_calculated": true,
+      "is_restated": true,
+      "is_adjusted": null,
+      "calc_type": "derived_lineitem",
+      "mapping_type": "direct",
+      "observed_at": "2026-10-06T04:20:12.593041Z",
+      "provider": "Fiscal",
+      "source_ref_ids": [
+        "source-fiscal-a6c37e08f014",
+        "source-fiscal-fcc901bc321a"
+      ],
+      "observation_type": "actual",
+      "x": "2025-06-30",
+      "y": 76441000000,
+      "size": null,
+      "series": "Value"
+    }
+  ],
+  "unit": "USD",
+  "baseline": null,
+  "package_info": {
+    "accessDefault": "private",
+    "artifactId": "b01eb45851e33ff492f12a732afcf5539bb8fae8a05ca35b755d3f20059b065f",
+    "artifactRuntime": "chatgpt-finance-chart-v2.html",
+    "deliveryMode": "site_creator",
+    "exportedAt": "2026-10-12T14:16:53.993Z",
+    "hostedReadOnly": true,
+    "retrievalDetailsIncluded": false,
+    "providers": [
+      "Fiscal"
+    ],
+    "controls": {
+      "edit": false,
+      "share": false
+    }
+  },
+  "packageInfo": {
+    "accessDefault": "private",
+    "artifactId": "b01eb45851e33ff492f12a732afcf5539bb8fae8a05ca35b755d3f20059b065f",
+    "artifactRuntime": "chatgpt-finance-chart-v2.html",
+    "deliveryMode": "site_creator",
+    "exportedAt": "2026-10-12T14:16:53.993Z",
+    "hostedReadOnly": true,
+    "retrievalDetailsIncluded": false,
+    "providers": [
+      "Fiscal"
+    ],
+    "controls": {
+      "edit": false,
+      "share": false
+    }
+  }
+}

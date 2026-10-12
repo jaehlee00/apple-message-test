@@ -1,0 +1,31 @@
+{
+  "verified": false,
+  "documentationRef": null,
+  "reviewedOn": null,
+  "protectedFunctionsCompatible": false,
+  "inbound": {
+    "eventIDPath": null,
+    "accountIDPath": null,
+    "recipientPath": null,
+    "businessSenderPath": null,
+    "textPath": null,
+    "channelPath": null,
+    "channelValue": null,
+    "kindPath": null,
+    "kindValue": null
+  },
+  "outbound": {
+    "endpoint": null,
+    "authentication": null,
+    "encoding": null,
+    "bodyTemplate": null,
+    "acceptedStatusCodes": [],
+    "acceptanceIDPath": null,
+    "acceptanceIDType": null
+  },
+  "acknowledgement": {
+    "statusCode": null,
+    "contentType": null,
+    "body": null
+  }
+}

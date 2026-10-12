@@ -1,0 +1,19 @@
+{
+  "name": "chart-concierge-amb",
+  "version": "0.4.0",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs",
+    "preflight": "node scripts/preflight.cjs",
+    "start": "twilio serverless:start",
+    "deploy": "twilio serverless:deploy --runtime node22"
+  },
+  "dependencies": {
+    "@twilio/runtime-handler": "2.1.0",
+    "twilio": "6.1.2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "accessDefault": "private",
+  "artifactId": "b01eb45851e33ff492f12a732afcf5539bb8fae8a05ca35b755d3f20059b065f",
+  "artifactRuntime": "chatgpt-finance-chart-v2.html",
+  "deliveryMode": "site_creator",
+  "exportedAt": "2026-10-12T14:16:53.993Z",
+  "hostedReadOnly": true,
+  "retrievalDetailsIncluded": false,
+  "providers": [
+    "Fiscal"
+  ],
+  "controls": {
+    "edit": false,
+    "share": false
+  }
+}

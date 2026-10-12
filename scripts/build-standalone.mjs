@@ -1,0 +1,17 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {previewPage,sourcePage} from '../src/pages.mjs';
+const root=new URL('../',import.meta.url);
+const chart=JSON.parse(await readFile(new URL('finance/dist/client/data/chart.json',root),'utf8'));
+const chartHtml=await readFile(new URL('finance/dist/client/index.html',root),'utf8');
+const image=(await readFile(new URL('public/revenue-preview.png',root))).toString('base64');
+let preview=previewPage().replace('/assets/revenue-preview.png','data:image/png;base64,'+image);
+const start=preview.indexOf('<body>')+6,end=preview.lastIndexOf('</body>');
+let body=preview.slice(start,end);
+body=body.replace(/<details class="details">[\s\S]*?<\/details>/,'');
+const sources=sourcePage(chart).replace(/<div class="actions">[\s\S]*?<\/div>/,'');
+const templates=JSON.stringify({chart:chartHtml,sources}).replaceAll('<','\\u003c');
+const contents=`<nav class="standalone-nav"><b>Working preview</b><button data-view="message">Message</button><button data-view="chart">Interactive chart</button><button data-view="sources">Source table</button><span>Not connected to Twilio</span></nav><div id="message-view">${body}</div><iframe id="chart-view" title="Original interactive Financial Charts export" hidden></iframe><iframe id="sources-view" title="Exact revenue source table" hidden></iframe><script type="application/json" id="templates">${templates}</script><script>const templates=JSON.parse(document.getElementById('templates').textContent);function show(view){['message','chart','sources'].forEach(v=>{const el=document.getElementById(v+'-view');el.hidden=v!==view;if(v===view&&v!=='message'&&!el.srcdoc)el.srcdoc=templates[v];});window.scrollTo(0,0);}document.addEventListener('click',e=>{const button=e.target.closest('[data-view]');if(button){show(button.dataset.view);return;}const link=e.target.closest('a');if(!link)return;const map={'/chart/msft-fy2025':'chart','/sources':'sources','/':'message'};if(map[link.getAttribute('href')]){e.preventDefault();show(map[link.getAttribute('href')]);}});</script>`;
+const css='<style>.standalone-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;padding:12px 20px;background:#142c23;color:white;flex-wrap:wrap;font-size:12px}.standalone-nav button{background:#ffffff1f;color:white;border:1px solid #ffffff3d;border-radius:6px;padding:8px 12px;cursor:pointer}.standalone-nav span{margin-left:auto;opacity:.7}iframe{border:0;width:100%;height:calc(100vh - 74px);min-height:600px;background:white}[hidden]{display:none!important}</style>';
+preview=preview.slice(0,start).replace('</head>',css+'</head>')+contents+'</body></html>';
+await writeFile(new URL('preview.html',root),preview);
+console.log('Built standalone preview.html with the original interactive runtime and source table.');
